@@ -1,16 +1,36 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>bio</title>
-  <link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>bio</title>
+	<link rel="stylesheet" href="styles.css" />
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			fetch('mockdata/bio.json')
+				.then(r => r.json())
+				.then(d => {
+					const el = document.getElementById('content');
+					el.innerHTML = `
+						<div class="card">
+							<h2>${d.name}</h2>
+							<div class="muted">${d.headline} · ${d.location}</div>
+							<p>${d.intro}</p>
+							<div>
+								${d.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join(' · ')}
+							</div>
+						</div>
+					`;
+				});
+		});
+	</script>
+	<noscript>Enable JavaScript to view this page.</noscript>
 </head>
 <body>
-  <main class="wrap">
-    <h1 class="title">bio</h1>
-    <p class="muted">A short bio goes here. Replace with your info.</p>
-    <p>Lorem ipsum — this is a simple placeholder page. Go back to the <a href="index.html">homepage</a>.</p>
-  </main>
+	<main class="wrap">
+		<a class="back" href="index.html">← back</a>
+		<h1 class="page-title">bio</h1>
+		<div id="content"></div>
+	</main>
 </body>
 </html>

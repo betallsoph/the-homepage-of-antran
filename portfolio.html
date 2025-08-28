@@ -1,20 +1,32 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Information Technology / Software Portfolio</title>
+	<link rel="stylesheet" href="styles.css" />
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			fetch('mockdata/portfolio-it.json').then(r => r.json()).then(d => {
+				const el = document.getElementById('content');
+				el.innerHTML = d.projects.map(p => `
+					<div class="card">
+						<h3>${p.name}</h3>
+						<div class="muted">${p.stack.join(' · ')}</div>
+						<p>${p.summary}</p>
+						${p.links?.demo ? `<a href="${p.links.demo}" target="_blank">Demo</a>` : ''}
+						${p.links?.code ? ` · <a href="${p.links.code}" target="_blank">Code</a>` : ''}
+					</div>
+				`).join('');
+			});
+		});
+	</script>
 </head>
 <body>
-  <main class="wrap">
-  <h1 class="title">Information Technology / Software Portfolio</h1>
-  <p class="muted">Software projects, links and notes.</p>
-    <ul>
-      <li>Project A — <a href="#">live</a> | <a href="#">code</a></li>
-      <li>Project B — <a href="#">live</a> | <a href="#">code</a></li>
-    </ul>
-    <p><a href="index.html">Back</a></p>
-  </main>
+	<main class="wrap">
+		<a class="back" href="index.html">← back</a>
+		<h1 class="page-title">Information Technology / Software Portfolio</h1>
+		<div id="content"></div>
+	</main>
 </body>
 </html>

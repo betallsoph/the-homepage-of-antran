@@ -1,21 +1,30 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>What I Offer</title>
-  <link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>What I Offer</title>
+	<link rel="stylesheet" href="styles.css" />
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			fetch('mockdata/offer.json').then(r => r.json()).then(d => {
+				const el = document.getElementById('content');
+				el.innerHTML = d.services.map(s => `
+					<div class="card">
+						<h3>${s.name}</h3>
+						<p>${s.description}</p>
+						<small class="muted">From ${s.rate}</small>
+					</div>
+				`).join('');
+			});
+		});
+	</script>
 </head>
 <body>
-  <main class="wrap">
-    <h1 class="title">What I Offer</h1>
-    <p class="muted">Short list of services.</p>
-    <ul>
-      <li>Consulting</li>
-      <li>Development</li>
-      <li>Design review</li>
-    </ul>
-    <p><a href="index.html">Back</a></p>
-  </main>
+	<main class="wrap">
+		<a class="back" href="index.html">← back</a>
+		<h1 class="page-title">What I Offer</h1>
+		<div id="content"></div>
+	</main>
 </body>
 </html>

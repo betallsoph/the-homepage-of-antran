@@ -1,17 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>cv</title>
-  <link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>cv</title>
+	<link rel="stylesheet" href="styles.css" />
+	<script>
+		function section(title, items) {
+			return `
+				<section class="section">
+					<h2>${title}</h2>
+					${items.map(it => `
+						<div class="card">
+							<h3>${it.title}</h3>
+							<div class="muted">${it.company || it.place} · ${it.period || ''}</div>
+							${it.description ? `<p>${it.description}</p>` : ''}
+							${it.bullets ? `<ul>${it.bullets.map(b => `<li>${b}</li>`).join('')}</ul>` : ''}
+						</div>
+					`).join('')}
+				</section>`;
+		}
+
+		window.addEventListener('DOMContentLoaded', () => {
+			fetch('mockdata/cv.json').then(r => r.json()).then(d => {
+				const el = document.getElementById('content');
+				el.innerHTML = [
+					section('Experience', d.experience),
+					section('Education', d.education),
+					section('Skills', d.skills.map(s => ({ title: s.category, description: s.items.join(', ') })))
+				].join('');
+			});
+		});
+	</script>
 </head>
 <body>
-  <main class="wrap">
-    <h1 class="title">cv</h1>
-    <p class="muted">A short CV or link to a PDF.</p>
-    <p>Download: <a href="#">cv.pdf</a> — or edit this page.</p>
-    <p><a href="index.html">Back</a></p>
-  </main>
+	<main class="wrap">
+		<a class="back" href="index.html">← back</a>
+		<h1 class="page-title">cv</h1>
+		<div id="content"></div>
+	</main>
 </body>
 </html>

@@ -1,20 +1,30 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>products</title>
-  <link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>products</title>
+	<link rel="stylesheet" href="styles.css" />
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			fetch('mockdata/products.json').then(r => r.json()).then(d => {
+				const list = document.getElementById('list');
+				list.innerHTML = d.products.map(p => `
+					<div class="card">
+						<h3>${p.name} <small class="muted">${p.status}</small></h3>
+						<p>${p.description}</p>
+						${p.url ? `<a href="${p.url}" target="_blank">Learn more</a>` : ''}
+					</div>
+				`).join('');
+			});
+		});
+	</script>
 </head>
 <body>
-  <main class="wrap">
-    <h1 class="title">products</h1>
-    <p class="muted">List of products or offerings.</p>
-    <ol>
-      <li>Product 1</li>
-      <li>Product 2</li>
-    </ol>
-    <p><a href="index.html">Back</a></p>
-  </main>
+	<main class="wrap">
+		<a class="back" href="index.html">← back</a>
+		<h1 class="page-title">products</h1>
+		<div id="list"></div>
+	</main>
 </body>
 </html>
