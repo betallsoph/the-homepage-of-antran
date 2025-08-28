@@ -1,0 +1,36 @@
+{
+  "experience": [
+    {
+      "title": "Full‑stack Engineer",
+      "company": "Acme Co.",
+      "period": "2023 — Present",
+      "description": "Build internal tools and customer‑facing apps.",
+      "bullets": [
+        "Led migration to TypeScript, reduced bugs 30%",
+        "Designed modular React component library"
+      ]
+    },
+    {
+      "title": "Frontend Engineer",
+      "company": "Startup XYZ",
+      "period": "2021 — 2023",
+      "description": "Shipped responsive web apps with performance focus.",
+      "bullets": [
+        "Core vitals: LCP < 2.5s, CLS < 0.1",
+        "Implemented e2e tests with Playwright"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "BSc Computer Science",
+      "place": "Awesome University",
+      "period": "2017 — 2021"
+    }
+  ],
+  "skills": [
+    { "category": "Languages", "items": ["TypeScript", "JavaScript", "Python"] },
+    { "category": "Frontend", "items": ["React", "Next.js", "CSS"] },
+    { "category": "Backend", "items": ["Node.js", "Express", "PostgreSQL"] }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "An Tran",
+  "note": "Reach out for projects, collaboration, or just to say hi.",
+  "methods": [
+    { "type": "Email", "label": "you@example.com", "href": "mailto:you@example.com" },
+    { "type": "GitHub", "label": "github.com/you", "href": "https://github.com/" },
+    { "type": "LinkedIn", "label": "linkedin.com/in/you", "href": "https://linkedin.com/" }
+  ]
+}

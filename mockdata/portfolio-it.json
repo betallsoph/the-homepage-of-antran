@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {
+      "name": "Issue Tracker",
+      "stack": ["React", "TypeScript", "Node", "Postgres"],
+      "summary": "A simple GitHub‑like issue tracker with labels, assignees and filters.",
+      "links": { "demo": "#", "code": "#" }
+    },
+    {
+      "name": "Personal Analytics",
+      "stack": ["Next.js", "Edge Functions", "SQLite"],
+      "summary": "Privacy‑friendly analytics for small sites.",
+      "links": { "demo": "#" }
+    }
+  ]
+}

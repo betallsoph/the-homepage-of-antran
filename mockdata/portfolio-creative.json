@@ -1,0 +1,18 @@
+{
+  "works": [
+    {
+      "title": "Minimal Poster Series",
+      "category": "Graphic Design",
+      "year": 2024,
+      "description": "Exploration of type, grid and negative space.",
+      "image": ""
+    },
+    {
+      "title": "Daily Sketchbook",
+      "category": "Illustration",
+      "year": 2023,
+      "description": "Selected spreads from a daily drawing habit.",
+      "image": ""
+    }
+  ]
+}

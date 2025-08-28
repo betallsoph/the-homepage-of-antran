@@ -1,0 +1,16 @@
+{
+  "products": [
+    {
+      "name": "Tiny Docs",
+      "status": "beta",
+      "description": "Minimal docs site generator for personal projects.",
+      "url": "#"
+    },
+    {
+      "name": "Keymap Buddy",
+      "status": "idea",
+      "description": "VS Code keymaps visualizer to help onboarding.",
+      "url": "#"
+    }
+  ]
+}

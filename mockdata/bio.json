@@ -1,0 +1,11 @@
+{
+  "name": "An Tran",
+  "headline": "Software Engineer",
+  "location": "HCMC, Vietnam",
+  "intro": "Engineer focusing on web apps, clean UX and fast iterations. Enjoys TypeScript, React, Node, and a bit of design.",
+  "links": [
+    { "label": "GitHub", "url": "https://github.com/" },
+    { "label": "LinkedIn", "url": "https://linkedin.com/" },
+    { "label": "Email", "url": "mailto:you@example.com" }
+  ]
+}
