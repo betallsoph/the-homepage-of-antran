@@ -3,30 +3,18 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>Information Technology / Software Portfolio</title>
+		<title>Information Technology / Software Portfolio</title>
 	<link rel="stylesheet" href="styles.css" />
 	<script>
-		window.addEventListener('DOMContentLoaded', () => {
-			fetch('mockdata/portfolio-it.json').then(r => r.json()).then(d => {
-				const el = document.getElementById('content');
-				el.innerHTML = d.projects.map(p => `
-					<div class="card">
-						<h3>${p.name}</h3>
-						<div class="muted">${p.stack.join(' · ')}</div>
-						<p>${p.summary}</p>
-						${p.links?.demo ? `<a href="${p.links.demo}" target="_blank">Demo</a>` : ''}
-						${p.links?.code ? ` · <a href="${p.links.code}" target="_blank">Code</a>` : ''}
-					</div>
-				`).join('');
-			});
-		});
+			// Redirect anyone landing here directly to external portfolio
+			window.location.replace('https://mainportfolio.tranthienan.id.vn');
 	</script>
 </head>
 <body>
 	<main class="wrap">
 		<a class="back" href="index.html">← back</a>
-		<h1 class="page-title">Information Technology / Software Portfolio</h1>
-		<div id="content"></div>
+			<h1 class="page-title">Redirecting to Information Technology / Software Portfolio…</h1>
+			<div id="content"></div>
 	</main>
 </body>
 </html>
