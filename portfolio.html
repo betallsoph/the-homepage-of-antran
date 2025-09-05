@@ -6,47 +6,15 @@
 		<title>Information Technology / Software Portfolio</title>
 	<link rel="stylesheet" href="styles.css" />
 	<script>
-				// Delayed redirect with visible status; includes manual open button
-				window.addEventListener('DOMContentLoaded', () => {
-					const target = 'https://mainportfolio.tranthienan.id.vn';
-					const statusEl = document.getElementById('status');
-					const openBtn = document.getElementById('open-btn');
-					let seconds = 2;
-					const tick = () => {
-						statusEl.textContent = `Redirecting in ${seconds}s…`;
-						if (seconds === 0) {
-							window.location.replace(target);
-						} else {
-							seconds -= 1;
-							setTimeout(tick, 1000);
-						}
-					};
-					tick();
-					openBtn?.addEventListener('click', () => {
-						window.open(target, '_blank', 'noopener');
-					});
-				});
+			// Redirect anyone landing here directly to external portfolio
+			window.location.replace('https://mainportfolio.tranthienan.id.vn');
 	</script>
 </head>
 <body>
 	<main class="wrap">
 		<a class="back" href="index.html">← back</a>
-				<h1 class="page-title">Information Technology / Software Portfolio</h1>
-				<p id="status" class="muted">Preparing redirect…</p>
-				<div class="card">
-					<p>If you are not redirected automatically, you can open it now:</p>
-					<p>
-						<button id="open-btn">Open in new tab</button>
-						or
-						<a href="https://mainportfolio.tranthienan.id.vn">continue here</a>
-					</p>
-				</div>
-				<noscript>
-					<div class="card">
-						<p>JavaScript is disabled. Please open the portfolio:</p>
-						<p><a href="https://mainportfolio.tranthienan.id.vn" target="_blank" rel="noopener">Open portfolio</a></p>
-					</div>
-				</noscript>
+			<h1 class="page-title">Redirecting to Information Technology / Software Portfolio…</h1>
+			<div id="content"></div>
 	</main>
 </body>
 </html>
